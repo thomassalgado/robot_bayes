@@ -1,0 +1,102 @@
+// Bayesian network 
+network "InternalNetwork" { //11 variables and 11 probability distributions
+}
+variable  "Camera_funcionando" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (491, 42)" ;
+}
+variable  "Bola_Visivel_Esquerda" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (384, 146)" ;
+}
+variable  "Gol_Adversário_Visível" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (50, 322)" ;
+}
+variable  "Executar_Virar_a_esquerda" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (392, 275)" ;
+}
+variable  "Executar_Virar_a_direita" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (644, 276)" ;
+}
+variable  "Motor_direita_funcional" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (812, 200)" ;
+}
+variable  "Motor_esquerda_funcional" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (225, 195)" ;
+}
+variable  "Executar_chute" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (151, 438)" ;
+}
+variable  "Bola_próxima" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (235, 324)" ;
+}
+variable  "Motor_chute_funcional" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (330, 399)" ;
+}
+variable  "Bola_Visivel_DIreita" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (621, 147)" ;
+}
+probability (  "Camera_funcionando" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Bola_Visivel_Esquerda" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Gol_Adversário_Visível" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Executar_Virar_a_esquerda" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Executar_Virar_a_direita" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Motor_direita_funcional" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Motor_esquerda_funcional" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Executar_chute" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Bola_próxima" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Motor_chute_funcional" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
+probability (  "Bola_Visivel_DIreita" ) { //1 variable(s) and 2 values
+	table 
+		0.5	// p(true | evidence )
+		0.5; 	// p(false | evidence );
+}
