@@ -47,56 +47,49 @@ variable  "bola_direita" { //2 values
 }
 probability (  "camera_ok" ) { //1 variable(s) and 2 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		0.99	// p(true | evidence )
+		0.01; 	// p(false | evidence );
 }
-probability (  "bola_esquerda" ) { //1 variable(s) and 2 values
+probability (  "bola_esquerda"  "camera_ok" ) { //2 variable(s) and 4 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.25 0.01 0.75 0.99;
 }
-probability (  "gol_visivel" ) { //1 variable(s) and 2 values
+probability (  "gol_visivel"  "camera_ok" ) { //2 variable(s) and 4 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.25 0.01 0.75 0.99;
 }
-probability (  "virar_esquerda" ) { //1 variable(s) and 2 values
+probability (  "virar_esquerda"  "bola_esquerda"  "motor_esquerda_ok" ) { //3 variable(s) and 8 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
 }
-probability (  "virar_direita" ) { //1 variable(s) and 2 values
+probability (  "virar_direita"  "motor_direita_ok"  "bola_direita" ) { //3 variable(s) and 8 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
 }
 probability (  "motor_direita_ok" ) { //1 variable(s) and 2 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		0.9	// p(true | evidence )
+		0.1; 	// p(false | evidence );
 }
 probability (  "motor_esquerda_ok" ) { //1 variable(s) and 2 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		0.9	// p(true | evidence )
+		0.1; 	// p(false | evidence );
 }
-probability (  "Executar_chute" ) { //1 variable(s) and 2 values
+probability (  "Executar_chute"  "motor_chute_ok"  "bola_proxima"  "gol_visivel" ) { //4 variable(s) and 16 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.95 0.5 0.01 0.01 0.01 0.5 0.01 0.01 0.05 0.5 0.99 0.99 0.99 0.5 0.99 0.99;
 }
-probability (  "bola_proxima" ) { //1 variable(s) and 2 values
+probability (  "bola_proxima"  "camera_ok" ) { //2 variable(s) and 4 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.2 0.1 0.8 0.9;
 }
 probability (  "motor_chute_ok" ) { //1 variable(s) and 2 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		0.9	// p(true | evidence )
+		0.1; 	// p(false | evidence );
 }
-probability (  "bola_direita" ) { //1 variable(s) and 2 values
+probability (  "bola_direita"  "camera_ok" ) { //2 variable(s) and 4 values
 	table 
-		0.5	// p(true | evidence )
-		0.5; 	// p(false | evidence );
+		 0.25 0.01 0.75 0.99;
 }
