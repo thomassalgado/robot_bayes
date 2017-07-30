@@ -29,7 +29,7 @@ variable  "motor_esquerda_ok" { //2 values
 	type discrete[2] {  "true"  "false" };
 	property "position = (511, 203)" ;
 }
-variable  "Executar_chute" { //2 values
+variable  "executar_chute" { //2 values
 	type discrete[2] {  "true"  "false" };
 	property "position = (214, 333)" ;
 }
@@ -60,11 +60,11 @@ probability (  "gol_visivel"  "camera_ok" ) { //2 variable(s) and 4 values
 }
 probability (  "virar_esquerda"  "bola_esquerda"  "motor_esquerda_ok" ) { //3 variable(s) and 8 values
 	table 
-		 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
+		 0.9 0.01 0.1 0.01 0.01 0.99 0.99 0.99;
 }
 probability (  "virar_direita"  "motor_direita_ok"  "bola_direita" ) { //3 variable(s) and 8 values
 	table 
-		 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
+		 0.9 0.01 0.1 0.01 0.01 0.99 0.99 0.99;
 }
 probability (  "motor_direita_ok" ) { //1 variable(s) and 2 values
 	table 
@@ -76,7 +76,7 @@ probability (  "motor_esquerda_ok" ) { //1 variable(s) and 2 values
 		0.9	// p(true | evidence )
 		0.1; 	// p(false | evidence );
 }
-probability (  "Executar_chute"  "motor_chute_ok"  "bola_proxima"  "gol_visivel" ) { //4 variable(s) and 16 values
+probability (  "executar_chute"  "motor_chute_ok"  "bola_proxima"  "gol_visivel" ) { //4 variable(s) and 16 values
 	table 
 		 0.95 0.5 0.01 0.01 0.01 0.5 0.01 0.01 0.05 0.5 0.99 0.99 0.99 0.5 0.99 0.99;
 }
